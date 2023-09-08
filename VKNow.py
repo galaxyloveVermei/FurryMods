@@ -6,8 +6,6 @@
 # _/________(___(__/_____/_____(___/_/__/___|_(___/_(___/___(__)_
 #                                /
 #                           (_ /
-#                   🔒 Licensed under the GNU AGPLv3
-#                                 https://www.gnu.org/licenses/agpl-3.0.html
 #
 #
 #
@@ -55,13 +53,13 @@ class VKNow(loader.Module):
 
     async def emoji(self):
         one = [
-            '<emoji document_id=5451636889717062286>🎧</emoji>', '<emoji document_id=5375203677487248777>🎛️</emoji>',
-            '<emoji document_id=5456140674028019486>🎚️</emoji>', '<emoji document_id=5224607267797606837>🔈</emoji>',
+            '<emoji document_id=5451636889717062286>🎧</emoji>', '<emoji document_id=5375203677487248777>🎛</emoji>',
+            '<emoji document_id=5456140674028019486>🎚</emoji>', '<emoji document_id=5224607267797606837>🔈</emoji>',
             '<emoji document_id=5424972470023104089>🎵</emoji>'
         ]
         two = [
             '<emoji document_id=5460795800101594035>🎤</emoji>', '<emoji document_id=5449816553727998023>🎹</emoji>',
-            '<emoji document_id=5361964771509808811>💻</emoji>', '<emoji document_id=5451814216031809603>🎙️</emoji>',
+            '<emoji document_id=5361964771509808811>💻</emoji>', '<emoji document_id=5451814216031809603>🎙</emoji>',
             '<emoji document_id=5416117059207572332>🔎</emoji>'
         ]
         return random.choice(one), random.choice(two)
@@ -80,12 +78,13 @@ class VKNow(loader.Module):
         vk_session = vk_api.VkApi(token=token)
         vk = vk_session.get_api()
         res = vk.users.get(user_ids=account, fields="status")[0]
-        curr_music = res['status_audio']
-        if curr_music:
+        
+        try:
+            curr_music = res['status_audio']
             author = curr_music['artist']
             title = curr_music['title']
             return author, title
-        else:
+        except:
             return False, False
 
     @loader.command(alias='vkn')
