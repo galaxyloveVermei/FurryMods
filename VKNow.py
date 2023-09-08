@@ -6,6 +6,8 @@
 # _/________(___(__/_____/_____(___/_/__/___|_(___/_(___/___(__)_
 #                                /
 #                           (_ /
+#                   🔒 Licensed under the GNU AGPLv3
+#                                 https://www.gnu.org/licenses/agpl-3.0.html
 #
 #
 #
