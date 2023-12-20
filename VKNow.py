@@ -9,7 +9,7 @@
 #
 #
 #
-# meta developer: @AstroModules | @FurryMods
+# meta developer: ' ' '@AstroModules | @FurryMods' ' '
 # requires: vk_api
 
 from .. import loader, utils
