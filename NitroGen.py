@@ -15,7 +15,7 @@ class NitroGenMod(loader.Module):
 
 	strings = {'name': 'NitroGen'}
 	async def main(self, args): 
-		num = int(args)
+		num = count(args)
 		valid = []
 		invalid = 0
 		chars = []
