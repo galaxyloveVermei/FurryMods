@@ -5,7 +5,7 @@ import logging
 from .. import loader, utils
 
 class NitroGenMod(loader.Module):
-	'''Модуль для просмотра проигрываемых треков в VK
+'''Модуль для генерации дискордо нитрооо
 ✨ Идея: @Astroofftop
 🎨 Баннер: @FurryMods
 ⌨️ Код: @toxicuse | @corelv'''
