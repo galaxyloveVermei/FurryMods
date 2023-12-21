@@ -5,7 +5,10 @@ import logging
 from .. import loader, utils
 
 class NitroGenMod(loader.Module):
-	'''Discord nitro generator!'''
+	'''Модуль для просмотра проигрываемых треков в VK
+✨ Идея: @FurryMods
+🎨 Баннер: @FurryMods
+⌨️ Код: @toxicuse | @user1_ru'''
 	async def client_ready(self, client, db):
 		self.client = client
 		self.db = db
