@@ -21,7 +21,7 @@ class VKNow(loader.Module):
     '''Модуль для просмотра проигрываемых треков в VK
 ✨ Идея: @FurryMods
 🎨 Баннер: @FurryMods
-⌨️ Код: @toxicuse | @user1_ru'''
+⌨️ Код: @toxicuse | @corelv'''
 
     strings = {
         'name': 'VKNow',
