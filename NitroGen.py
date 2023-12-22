@@ -5,7 +5,7 @@ import logging
 from .. import loader, utils
 
 class NitroGenMod(loader.Module):
-'''Модуль для генерации дискорд нитро
+ '''Модуль для дискорд нитро
 ✨ Идея: @Astroofftop
 🎨 Баннер: @FurryMods
 ⌨️ Код: @toxicuse | @corelv'''
