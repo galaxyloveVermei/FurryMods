@@ -5,8 +5,8 @@ import logging
 from .. import loader, utils
 
 class NitroGenMod(loader.Module):
-'''Модуль для лови халявных дискордо нитрооо
-✨ Идея: @FurryMods
+'''Модуль для генерации дискорд нитро
+✨ Идея: @Astroofftop
 🎨 Баннер: @FurryMods
 ⌨️ Код: @toxicuse | @corelv'''
 	async def client_ready(self, client, db):
