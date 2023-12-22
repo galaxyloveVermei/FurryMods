@@ -1,21 +1,21 @@
 import string
 import requests
 import numpy
-import logging
 from .. import loader, utils
 
 class NitroGenMod(loader.Module):
- '''Модуль для дискорд нитро
+	'''Модуль для дискорд нитро
 ✨ Идея: @Astroofftop
 🎨 Баннер: @FurryMods
-⌨️ Код: @toxicuse | @corelv'''
+⌨️ Код: @toxicuse | @corelv
+	'''
 	async def client_ready(self, client, db):
 		self.client = client
 		self.db = db
 
 	strings = {'name': 'NitroGen'}
 	async def main(self, args): 
-		num = count(args)
+		num = int(args)
 		valid = []
 		invalid = 0
 		chars = []
@@ -34,8 +34,10 @@ class NitroGenMod(loader.Module):
 
 	async def quickChecker(self, nitro: str):
 		url = f"https://discordapp.com/api/v9/entitlements/gift-codes/{nitro}?with_application=false&with_subscription_plan=true"
-		response = requests.get(url) 
-		s = (requests.get(url)).json()
+
+		resp = await utils.run_sync(requests.request, "GET", url)
+		s = resp.json()
+
 		if s['message'] == '404: Not Found':
 			return False 
 		if s['message'] == 'You are being rate limited.':
@@ -44,7 +46,7 @@ class NitroGenMod(loader.Module):
 			return nitro
 
 	async def gencmd(self, message):
-		'''<int> - try generate discord nitro'''
+		'''<count> - try generate discord nitro'''
 		args = utils.get_args_raw(message)
 		msg = await utils.answer(message, (
 			'<emoji document_id=5307675706283533118>🫥</emoji>'
@@ -63,3 +65,4 @@ class NitroGenMod(loader.Module):
 				'<b>Пойман халявный дискорд нитро! Вот ссылка на него:</b>'
 				f'\n\n{result}'
 			))
+1
