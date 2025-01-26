@@ -38,13 +38,16 @@ class GameCheat_Lib(loader.Library):
     )
 
     resp = requests.post(
-      'http://api.service.gameeapp.com', 
-      headers=headers, 
-      data=data
+        'https://api.service.gameeapp.com', 
+        headers=headers, 
+        data=data
     )
     result_data = resp.json()
-    token = result_data["result"]["tokens"]["authenticate"]
-    return token
+    
+    if "result" in result_data and "tokens" in result_data["result"]:
+        return result_data["result"]["tokens"]["authenticate"]
+    else:
+        return None
 
   async def game_id(self, game_url):
     headers = CaseInsensitiveDict()
