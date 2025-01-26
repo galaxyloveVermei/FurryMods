@@ -9,7 +9,7 @@ import logging
 from requests.structures import CaseInsensitiveDict
 
 class GameCheat_Lib(loader.Library):
-  developer = "toxicuse"
+  developer = "dollar"
   version = (1, 0, 5)
 
   async def get_token(self, g):
